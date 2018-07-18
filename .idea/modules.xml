@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/music163.iml" filepath="$PROJECT_DIR$/music163.iml" />
+      <module fileurl="file://$PROJECT_DIR$/music163-log-common/music163-log-common.iml" filepath="$PROJECT_DIR$/music163-log-common/music163-log-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/music163-log-flume/music163-log-flume.iml" filepath="$PROJECT_DIR$/music163-log-flume/music163-log-flume.iml" />
+      <module fileurl="file://$PROJECT_DIR$/music163-log-hiveudf/music163-log-hiveudf.iml" filepath="$PROJECT_DIR$/music163-log-hiveudf/music163-log-hiveudf.iml" />
+      <module fileurl="file://$PROJECT_DIR$/music163-log-phone/music163-log-phone.iml" filepath="$PROJECT_DIR$/music163-log-phone/music163-log-phone.iml" />
+    </modules>
+  </component>
+</project>

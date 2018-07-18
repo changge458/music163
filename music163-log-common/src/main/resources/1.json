@@ -1,0 +1,59 @@
+{
+  "appChannel": "appstore",
+  "appVersion": "1.0.0",
+  "deviceId": "Device000006",
+  "deviceStyle": "vivo 3",
+  "osType": "7.1.1",
+  "appPlatform": "winphone",
+  "appErrorLogs": [
+    {
+      "createdAtMs": 1531298095533,
+      "errorBrief": "at cn.lift.appIn.control.CommandUtil.getInfo(CommandUtil.java:67)",
+      "errorDetail": "java.lang.NullPointerException at cn.lift.appIn.web.AbstractBaseController.validInbound(AbstractBaseController.java:72) at cn.lift.dfdf.web.AbstractBaseController.validInbound"
+    }
+  ],
+  "appEventLogs": [
+    {
+      "createdAtMs": 1531298095533,
+      "duration": "04:05",
+      "eventId": "skip",
+      "logType": "event",
+      "mark": "-1",
+      "musicID": "米店",
+      "playTime": "1531298095725",
+      "singer": "王梵瑞",
+      "type": "民谣|原声"
+    }
+  ],
+  "appPageLogs": [
+    {
+      "createdAtMs": 1531298095725,
+      "logType": "page",
+      "nextPage": "main.html",
+      "pageId": "test.html",
+      "pageViewCntInSession": 0,
+      "visitIndex": "3"
+    }
+  ],
+  "appStartupLogs": [
+    {
+      "brand": "三星",
+      "carrier": "中国移动",
+      "country": "america",
+      "createdAtMs": 1531298095725,
+      "logType": "startup",
+      "network": "wifi",
+      "province": "guangdong",
+      "screenSize": "480 * 320"
+    }
+  ],
+  "appUsageLogs": [
+    {
+      "createdAtMs": 1531298095725,
+      "logType": "usage",
+      "singleDownloadTraffic": "45900",
+      "singleUploadTraffic": "35",
+      "singleUseDurationSecs": "45"
+    }
+  ]
+}
