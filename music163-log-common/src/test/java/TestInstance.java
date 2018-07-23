@@ -5,10 +5,11 @@ public class TestInstance {
 
         Class clazz = AppStartupLog.class;
 
-        if (clazz.equals(AppStartupLog.class)) {
+        if(clazz.equals(AppStartupLog.class)){
             System.out.println("ok");
 
         }
+
 
 
     }

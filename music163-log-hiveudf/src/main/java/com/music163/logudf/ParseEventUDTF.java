@@ -81,7 +81,7 @@ public class ParseEventUDTF extends GenericUDTF {
 
         //获取log数组
         String[] arr = line.split("#");
-        String eventJson = ParseLogUtil.parseToJsonArray("appEventLogs", arr[4]);
+        String eventJson =  ParseLogUtil.parseToJsonArray("appEventLogs",arr[4]);
 
         //获取整个日志数组
         List<String> list = ParseLogUtil.parseJsonToArray("appEventLogs", eventJson);
@@ -114,7 +114,7 @@ public class ParseEventUDTF extends GenericUDTF {
 
             //obj[11] ---> obj[13] : LogError
             for (int j = baseSize; j < size; j++) {
-                obj[j] = ParseLogUtil.parseJson(fields2.get((j - baseSize)), json);
+                obj[j] = ParseLogUtil.parseJson(fields2.get((j-baseSize)), json);
             }
             forward(obj);
         }

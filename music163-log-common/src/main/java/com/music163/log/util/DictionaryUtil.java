@@ -33,33 +33,32 @@ public class DictionaryUtil {
     }
 
     //随机提取指定value的值
-    public static String randomValue(String key) {
+    public static String randomValue(String key){
         Random r = new Random();
         List<String> values = dict.get(key);
-        if (values == null) {
+        if(values == null){
             return null;
         }
         return values.get(r.nextInt(values.size()));
 
     }
 
-    public static String randomValue_positive() {
+    public static String randomValue_positive(){
         Random r = new Random();
         List<String> values = dict.get("eventid");
-        if (values == null) {
+        if(values == null){
             return null;
         }
         //0-3
-        return values.get(r.nextInt(values.size() - 3));
+        return values.get(r.nextInt(values.size()-3));
     }
-
-    public static String randomValue_negative() {
+    public static String randomValue_negative(){
         Random r = new Random();
         List<String> values = dict.get("eventid");
-        if (values == null) {
+        if(values == null){
             return null;
         }
         //4-6
-        return values.get(r.nextInt(values.size() - 4) + 4);
+        return values.get(r.nextInt(values.size()-4)+4);
     }
 }

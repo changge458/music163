@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/music163-log-flume/music163-log-flume.iml" filepath="$PROJECT_DIR$/music163-log-flume/music163-log-flume.iml" />
       <module fileurl="file://$PROJECT_DIR$/music163-log-hiveudf/music163-log-hiveudf.iml" filepath="$PROJECT_DIR$/music163-log-hiveudf/music163-log-hiveudf.iml" />
       <module fileurl="file://$PROJECT_DIR$/music163-log-phone/music163-log-phone.iml" filepath="$PROJECT_DIR$/music163-log-phone/music163-log-phone.iml" />
+      <module fileurl="file://$PROJECT_DIR$/music163-log-recommend/music163-log-recommend.iml" filepath="$PROJECT_DIR$/music163-log-recommend/music163-log-recommend.iml" />
     </modules>
   </component>
 </project>

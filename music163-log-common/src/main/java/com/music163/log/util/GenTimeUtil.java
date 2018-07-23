@@ -21,10 +21,10 @@ public class GenTimeUtil {
             calendar.setTime(d);
             int i = calendar.get(Calendar.DAY_OF_WEEK);
             Random r = new Random();
-            if (i == 7 || i == 1) {
+            if(i == 7 || i == 1){
                 return genWeekendTime(date, r.nextInt(3));
             }
-            return genMiddleWeekTime(date, r.nextInt(3));
+            return genMiddleWeekTime(date,r.nextInt(3));
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -39,25 +39,26 @@ public class GenTimeUtil {
         String hour;
         String minute;
 
-        switch (i) {
+        switch (i){
             case 0:
                 hour = intFormat(r.nextInt(24));
                 minute = intFormat(r.nextInt(59));
-                String newDate = date + " " + hour + ":" + minute;
+                String newDate = date + " " + hour + ":" + minute ;
                 return parseTime(newDate);
 
 
             case 1:
                 hour = "10";
                 minute = intFormat(r.nextInt(59));
-                newDate = date + " " + hour + ":" + minute;
+                newDate = date + " " + hour + ":" + minute ;
                 return parseTime(newDate);
+
 
 
             case 2:
                 hour = intFormat(r.nextInt(24));
                 minute = intFormat(r.nextInt(59));
-                newDate = date + " " + hour + ":" + minute;
+                newDate = date + " " + hour + ":" + minute ;
                 return parseTime(newDate);
 
         }
@@ -66,31 +67,33 @@ public class GenTimeUtil {
     }
 
 
+
     private static long genMiddleWeekTime(String date, int i) {
         Random r = new Random();
 
         String hour;
         String minute;
 
-        switch (i) {
+        switch (i){
             case 0:
                 hour = intFormat(r.nextInt(24));
                 minute = intFormat(r.nextInt(59));
-                String newDate = date + " " + hour + ":" + minute;
+                String newDate = date + " " + hour + ":" + minute ;
                 return parseTime(newDate);
 
 
             case 1:
                 hour = "13";
                 minute = intFormat(r.nextInt(59));
-                newDate = date + " " + hour + ":" + minute;
+                newDate = date + " " + hour + ":" + minute ;
                 return parseTime(newDate);
+
 
 
             case 2:
                 hour = intFormat(r.nextInt(24));
                 minute = intFormat(r.nextInt(59));
-                newDate = date + " " + hour + ":" + minute;
+                newDate = date + " " + hour + ":" + minute ;
                 return parseTime(newDate);
 
         }
@@ -113,8 +116,8 @@ public class GenTimeUtil {
 
     }
 
-    private static String intFormat(int i) {
-        DecimalFormat df = new DecimalFormat("00");
+    private static String intFormat(int i ){
+        DecimalFormat df= new DecimalFormat("00");
         return df.format(i);
 
     }
@@ -125,6 +128,7 @@ public class GenTimeUtil {
             System.out.println(genTime("2018-02-29"));
         }
     }
+
 
 
 }

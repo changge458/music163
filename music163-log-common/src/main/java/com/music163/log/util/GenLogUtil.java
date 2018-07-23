@@ -90,22 +90,22 @@ public class GenLogUtil {
         List<T> list = new ArrayList<T>();
         Random r = new Random();
         if (clazz.equals(AppStartupLog.class)) {
-            list.add(new GenLogUtil(type, deviceID, date).genLog(clazz));
+            list.add(new GenLogUtil(type, deviceID,date).genLog(clazz));
         }
         if (clazz.equals(AppEventLog.class)) {
             for (int i = 0; i <= r.nextInt(10); i++) {
-                list.add(new GenLogUtil(type, deviceID, date).genLog(clazz));
+                list.add(new GenLogUtil(type, deviceID,date).genLog(clazz));
             }
         } else {
             for (int i = 0; i <= r.nextInt(3); i++) {
-                list.add(new GenLogUtil(type, deviceID, date).genLog(clazz));
+                list.add(new GenLogUtil(type, deviceID,date).genLog(clazz));
             }
         }
         return list;
     }
 
     public AppLogAggEntity genLogAgg() {
-        AppLogAggEntity agg = new GenLogUtil(type, deviceID, date).genLog(AppLogAggEntity.class);
+        AppLogAggEntity agg = new GenLogUtil(type, deviceID,date).genLog(AppLogAggEntity.class);
         agg.setAppErrorLogs(genLogList(AppErrorLog.class));
         agg.setAppEventLogs(genLogList(AppEventLog.class));
         agg.setAppStartupLogs(genLogList(AppStartupLog.class));

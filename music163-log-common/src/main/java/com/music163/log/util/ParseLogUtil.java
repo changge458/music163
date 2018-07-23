@@ -65,14 +65,14 @@ public class ParseLogUtil {
         return null;
     }
 
-    public static List<String> parseJsonToArray(String key, String json) {
+    public static List<String> parseJsonToArray(String key, String json){
         List<String> list = new ArrayList<String>();
 
         try {
             JSONObject jo = JSON.parseObject(json);
             JSONArray jArray = jo.getJSONArray(key);
-            if (jArray != null && jArray.size() > 0) {
-                for (int i = 0; i < jArray.size(); i++) {
+            if ( jArray != null && jArray.size() > 0) {
+                for( int i = 0; i < jArray.size(); i++){
                     String o = jArray.get(i).toString();
                     list.add(o);
                 }
@@ -82,6 +82,5 @@ public class ParseLogUtil {
         }
 
         return list;
-
     }
 }

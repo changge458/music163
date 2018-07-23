@@ -12,12 +12,12 @@ import java.util.Map;
 public class GeoliteUtil {
 
     //
-    public static Reader reader;
+    public static Reader reader ;
 
     //
-    public static Map<String, String> cache = new HashMap<String, String>();
+    public static Map<String,String> cache = new HashMap<String, String>() ;
 
-    static {
+    static{
         try {
             //InputStream in = ClassLoader.getSystemResourceAsStream("GeoLite2-City.mmdb");
             InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream("GeoLite2-City.mmdb");
@@ -28,21 +28,23 @@ public class GeoliteUtil {
         }
     }
 
-    public static String processCache(String ip) {
-        String value = cache.get(ip);
-        if (value == null) {
+    public static String processCache(String ip){
+        String value = cache.get(ip) ;
+        if(value == null){
             try {
-                JsonNode node = reader.get(InetAddress.getByName(ip));
-                String country = "unknown";
-                String prov = "unknown";
-                if (node != null) {
+                JsonNode node = reader.get(InetAddress.getByName(ip)) ;
+                String country = "unknown" ;
+                String prov = "unknown" ;
+                if(node != null){
                     try {
                         country = node.get("country").get("names").get("zh-CN").textValue();
-                    } catch (Exception e) {
+                    }
+                    catch (Exception e) {
                     }
                     try {
                         prov = node.get("subdivisions").get(0).get("names").get("zh-CN").textValue();
-                    } catch (Exception e) {
+                    }
+                    catch (Exception e) {
                     }
                 }
                 cache.put(ip, country + "," + prov);
@@ -51,14 +53,13 @@ public class GeoliteUtil {
                 e.printStackTrace();
             }
         }
-        return cache.get(ip);
+        return cache.get(ip) ;
     }
 
-    public static String getCountry(String ip) {
+    public static String getCountry(String ip){
         return processCache(ip).split(",")[0];
     }
-
-    public static String getProvince(String ip) {
+    public static String getProvince(String ip){
         return processCache(ip).split(",")[1];
     }
 }

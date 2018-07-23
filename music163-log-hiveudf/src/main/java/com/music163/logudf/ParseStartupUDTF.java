@@ -53,6 +53,7 @@ public class ParseStartupUDTF extends GenericUDTF {
             }
 
 
+
             //添加字段名称
             List<String> fieldNames = new ArrayList<String>();
             fieldNames.addAll(fields);
@@ -83,7 +84,7 @@ public class ParseStartupUDTF extends GenericUDTF {
 
         //获取log数组
         String[] arr = line.split("#");
-        String startupJson = ParseLogUtil.parseToJsonArray("appStartupLogs", arr[4]);
+        String startupJson =  ParseLogUtil.parseToJsonArray("appStartupLogs",arr[4]);
 
         //获取整个日志数组
         List<String> list = ParseLogUtil.parseJsonToArray("appStartupLogs", startupJson);
@@ -116,7 +117,7 @@ public class ParseStartupUDTF extends GenericUDTF {
 
             //obj[11] ---> obj[13] : LogError
             for (int j = baseSize; j < size; j++) {
-                obj[j] = ParseLogUtil.parseJson(fields2.get((j - baseSize)), json);
+                obj[j] = ParseLogUtil.parseJson(fields2.get((j-baseSize)), json);
             }
             forward(obj);
         }

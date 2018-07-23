@@ -1,10 +1,8 @@
 import com.music163.log.util.GeoliteUtil;
 import com.music163.log.util.MysqlUtil;
 import com.music163.log.util.ParseLogUtil;
-import org.junit.Test;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.FileReader;
 import java.util.List;
 
@@ -56,34 +54,13 @@ public class TestParseList {
                     obj[j] = ParseLogUtil.parseJson(fields2.get((j - baseSize)), json);
                 }
 
-                for (int i = 0; i < size; i++) {
+                for (int i =0 ; i < size; i++) {
                     System.out.print(obj[i] + ",");
 
                 }
                 System.out.println();
 
             }
-        }
-    }
-
-
-    @Test
-    public void xxx() throws Exception {
-        String line = null;
-        File f = new File("C:/Users/chang/Desktop/1.txt");
-        BufferedReader br = new BufferedReader(new FileReader(f));
-        while ((line = br.readLine()) != null) {
-            String[] arr = line.split("#");
-            String eventJson = ParseLogUtil.parseToJsonArray("appEventLogs", arr[4]);
-
-            try {
-                List<String> list = ParseLogUtil.parseJsonToArray("appEventLogs", eventJson);
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-            //获取整个日志数组
-
         }
     }
 }

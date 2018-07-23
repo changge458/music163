@@ -85,7 +85,6 @@ public class MysqlUtil {
 
     /**
      * 通过表获取关键字
-     *
      * @param tableName
      * @return
      */
@@ -113,7 +112,7 @@ public class MysqlUtil {
 
             for (int i = 2; i <= columnCount; i++) {
                 String keyword = rs.getString(i);
-                if (keyword != null) {
+                if(keyword != null){
                     list.add(keyword);
                 }
             }
@@ -126,6 +125,7 @@ public class MysqlUtil {
             e.printStackTrace();
         }
         return list;
+
 
 
     }

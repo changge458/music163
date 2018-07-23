@@ -10,6 +10,7 @@
         <module name="music163-log-flume" />
         <module name="music163-log-hiveudf" />
         <module name="music163-log-phone" />
+        <module name="music163-log-recommend" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
@@ -17,6 +18,7 @@
       <module name="music163-log-flume" target="1.5" />
       <module name="music163-log-hiveudf" target="1.5" />
       <module name="music163-log-phone" target="1.5" />
+      <module name="music163-log-recommend" target="1.5" />
     </bytecodeTargetLevel>
   </component>
 </project>

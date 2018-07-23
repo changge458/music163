@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
+
 /**
  * 日志聚合体解析表生成函数
  */
@@ -83,7 +84,7 @@ public class ParseUsageUDTF extends GenericUDTF {
 
         //获取log数组
         String[] arr = line.split("#");
-        String usageJson = ParseLogUtil.parseToJsonArray("appUsageLogs", arr[4]);
+        String usageJson =  ParseLogUtil.parseToJsonArray("appUsageLogs",arr[4]);
 
         //获取整个日志数组
         List<String> list = ParseLogUtil.parseJsonToArray("appUsageLogs", usageJson);
@@ -116,7 +117,7 @@ public class ParseUsageUDTF extends GenericUDTF {
 
             //obj[11] ---> obj[13] : LogError
             for (int j = baseSize; j < size; j++) {
-                obj[j] = ParseLogUtil.parseJson(fields2.get((j - baseSize)), json);
+                obj[j] = ParseLogUtil.parseJson(fields2.get((j-baseSize)), json);
             }
             forward(obj);
         }

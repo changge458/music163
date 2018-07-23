@@ -12,7 +12,7 @@ import java.util.Random;
 public class DataSender {
 
     public static void main(String[] args) throws Exception {
-        genUser(100, "2018-07-16", 1000);
+        genUser(100,"2018-07-16",1000);
 
     }
 
@@ -22,7 +22,7 @@ public class DataSender {
         for (int i = 0; i < num; i++) {
             AppLogAggEntity aggLog = new GenLogUtil(type, deviceID, date).genLogAgg();
             String json = JSON.toJSONString(aggLog, false);
-            //doSend(json);
+            doSend(json);
             System.out.println(json);
             try {
                 Thread.sleep(0);
@@ -67,14 +67,14 @@ public class DataSender {
         Random r = new Random();
 
         //产生
-        for (int i = 0; i < userNum; i++) {
+        for(int i = 0; i < userNum ; i++){
 
             DecimalFormat df = new DecimalFormat("000000");
-            final String deviceID = "Device" + df.format(i);
+            final String deviceID = "Device"+ df.format(i);
 
             final int type = r.nextInt(9) + 1;
 
-            Thread t1 = new Thread() {
+            Thread t1 = new Thread(){
                 @Override
                 public void run() {
                     genData(deviceID, type, date, logNum);
