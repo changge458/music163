@@ -62,20 +62,13 @@ object MusicRecommend {
 
         val res_to_users = model.recommendForAllUsers(10) //给所有用户推荐topN个商品
 
-        res_to_users.write.saveAsTable("music163.xxx");
+        res_to_users.write.saveAsTable("music163.music_recommend_middle");
 
-        // res_to_users.createOrReplaceTempView("recommend2")
+        spark.sql("create table if not exists music163.music_recommend(deviceId string, mId string,  mark string)")
 
-        //spark.sql("create table if not exists music163.music_recommend(deviceId string, mname string, mark string)")
+        spark.sql("truncate table music163.music_recommend ")
 
-        //spark.sql("truncate table  music163.music_recommend")
-
-
-        //spark.sql("create table music163.xxx as select uid,tags from recommend2 lateral view explode(recommendations) xxx as tags ")
-
-
-        //res_to_users.
-
+        spark.sql("insert into table music163.music_recommend select uid, recommend.name, recommend.rating from (select uid, recommend from music163.music_recommend_middle lateral view explode(recommendations) xxx as recommend) a ")
 
         spark.stop()
     }
