@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<configuration>
+        <property>
+                <name>dfs.replication</name>
+                <value>3</value>
+        </property>
+        <property>
+                <name>dfs.namenode.name.dir</name>
+                <value>/home/centos/ha/dfs/name1,/home/centos/ha/dfs/name2</value>
+        </property>
+        <property>
+                <name>dfs.datanode.data.dir</name>
+                <value>/home/centos/ha/dfs/data1,/home/centos/ha/dfs/data2</value>
+        </property>
+
+<!-- 高可用配置 -->
+<property>
+  <name>dfs.nameservices</name>
+  <value>mycluster</value>
+</property>
+
+<property>
+  <name>dfs.ha.namenodes.mycluster</name>
+  <value>nn1,nn2</value>
+</property>
+
+<property>
+  <name>dfs.namenode.rpc-address.mycluster.nn1</name>
+  <value>s101:8020</value>
+</property>
+<property>
+  <name>dfs.namenode.rpc-address.mycluster.nn2</name>
+  <value>s105:8020</value>
+</property>
+
+<property>
+  <name>dfs.namenode.http-address.mycluster.nn1</name>
+  <value>s101:50070</value>
+</property>
+<property>
+  <name>dfs.namenode.http-address.mycluster.nn2</name>
+  <value>s105:50070</value>
+</property>
+
+<property>
+  <name>dfs.namenode.shared.edits.dir</name>
+  <value>qjournal://s102:8485;s103:8485;s104:8485/mycluster</value>
+</property>
+
+<property>
+  <name>dfs.client.failover.proxy.provider.mycluster</name>
+  <value>org.apache.hadoop.hdfs.server.namenode.ha.ConfiguredFailoverProxyProvider</value>
+</property>
+
+<!--  在容灾发生时，保护活跃的namenode -->
+<property>
+      <name>dfs.ha.fencing.methods</name>
+      <value>
+      	  sshfence 
+          shell(/bin/true)
+      </value>
+</property>
+
+<property>
+      <name>dfs.ha.fencing.ssh.private-key-files</name>
+      <value>/home/centos/.ssh/id_rsa</value>
+</property>
+
+<!-- 配置自动容灾   -->
+<property>
+  <name>dfs.ha.automatic-failover.enabled</name>
+  <value>true</value>
+</property>
+
+<property>
+  <name>dfs.webhdfs.enabled</name>
+  <value>true</value>
+</property>
+
+</configuration>

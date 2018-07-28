@@ -13,18 +13,9 @@ public class AppEventLog extends AppBaseLog {
 
     private String playTime;        //播放时间
     private String duration;        //播放时长
-    private String singer;          //歌手
-    private String type;            //类型
     private String mark;            //打分
-    private String isFree;          //是否付费
 
-    public String getIsFree() {
-        return isFree;
-    }
 
-    public void setIsFree(String isFree) {
-        this.isFree = isFree;
-    }
 
     public AppEventLog() {
         setLogType(LOGTYPE_EVENT);
@@ -70,19 +61,4 @@ public class AppEventLog extends AppBaseLog {
         this.mark = mark;
     }
 
-    public String getSinger() {
-        return singer;
-    }
-
-    public void setSinger(String singer) {
-        this.singer = singer;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 }

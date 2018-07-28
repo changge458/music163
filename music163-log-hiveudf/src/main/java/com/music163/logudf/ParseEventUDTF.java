@@ -23,7 +23,7 @@ import java.util.List;
  * 日志聚合体解析表生成函数
  */
 @Description(name = "parseEvent",
-        value = "select parseEvent(line) ===> server_time,remote_ip,country,,province,client_time ,deviceId,appChannel,appVersion,deviceStyle,osType,appPlatform,,musicID createdAtMs eventId,logType,mark,playTime,duration,singer,type,")
+        value = "select parseEvent(line) ===> server_time,remote_ip,country,province,client_time ,deviceId,appChannel,appVersion,deviceStyle,osType,appPlatform,,musicID createdAtMs eventId,logType,mark,playTime,duration,singer,type,")
 
 public class ParseEventUDTF extends GenericUDTF {
 

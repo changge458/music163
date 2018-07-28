@@ -126,9 +126,7 @@ public class GenLogUtil {
             t1.setDuration(list.get(1));
             t1.setPlayTime(t1.getCreatedAtMs() + "");
         }
-        t1.setSinger(list.get(2));
-        t1.setType(list.get(3));
-        t1.setIsFree(list.get(4));
+
 
         t1.setEventId(positive);
         t1.setMark(parseMark(positive));
@@ -145,9 +143,7 @@ public class GenLogUtil {
             t1.setDuration("00:20");
             t1.setPlayTime(t1.getCreatedAtMs() + "");
         }
-        t1.setSinger(list.get(2));
-        t1.setType(list.get(3));
-        t1.setIsFree(list.get(4));
+
 
         t1.setEventId(negative);
         t1.setMark(parseMark(negative));
