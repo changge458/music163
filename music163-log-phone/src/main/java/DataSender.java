@@ -11,8 +11,17 @@ import java.util.Random;
 
 public class DataSender {
 
+    //用户数不要超过100，因为mysql默认最大连接数为100，超出会报错
     public static void main(String[] args) throws Exception {
-        genUser(100,"2018-07-16",1000);
+        DecimalFormat df = new DecimalFormat("00");
+        for(int i = 13; i<=31; i++){
+            genUser(100, "2018-07-"+df.format(i), 200);
+            Thread.sleep(600*1000);
+
+        }
+
+
+
 
     }
 
@@ -25,7 +34,7 @@ public class DataSender {
             doSend(json);
             System.out.println(json);
             try {
-                Thread.sleep(0);
+                Thread.sleep(20);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -67,14 +76,15 @@ public class DataSender {
         Random r = new Random();
 
         //产生
-        for(int i = 0; i < userNum ; i++){
+        for (int i = 0; i < userNum; i++) {
 
             DecimalFormat df = new DecimalFormat("000000");
-            final String deviceID = "Device"+ df.format(i);
+            final String deviceID = "Device" + df.format(i);
 
-            final int type = r.nextInt(9) + 1;
+            //表映射 eg:1 => music_mix，参见TypeUtil
+            final int type = (i % 9) + 1;
 
-            Thread t1 = new Thread(){
+            Thread t1 = new Thread() {
                 @Override
                 public void run() {
                     genData(deviceID, type, date, logNum);
